@@ -2,18 +2,18 @@
 
 [English](README.md) | [한국어](README.ko.md)
 
-Swift에서 `account.getMe()`를 호출하면 로그인한 사용자의 프로필을 받습니다. Rust Inside는 샘플 Rust 라이브러리로 iOS SDK를 빌드해 이 저장소에 Swift 패키지로 배포합니다. 패키지는 Swift tools 6.0을 사용하고, iOS 18 이상인 arm64 기기와 Apple Silicon 시뮬레이터를 지원합니다. [Rust 구현](https://github.com/Rust-Inside/sample-rust-core/blob/main/src/api.rs)
+Swift에서 `account.getMe()`를 호출하면 로그인한 사용자의 프로필을 받습니다. Rust Inside는 샘플 Rust 라이브러리로 iOS SDK를 빌드해 이 저장소에 Swift 패키지로 배포합니다. 패키지는 Swift tools 6.0을 사용하고, iOS 18 이상인 arm64 기기와 Apple Silicon 시뮬레이터를 지원합니다. [Rust 구현](https://github.com/Rust-Inside/sample-rust-core/blob/v0.2.0/src/api.rs)
 
 ## Xcode에 추가하기
 
-Xcode에서 **File → Add Package Dependencies**를 열고 `https://github.com/Rust-Inside/sample-ios-sdk.git`를 입력하세요. 버전 `0.1.0`을 선택하고 앱 타깃에 `SampleRustCoreSDK` 제품을 추가하면 Xcode가 미리 빌드된 XCFramework를 내려받습니다. [v0.1.0 릴리스](https://github.com/Rust-Inside/sample-ios-sdk/releases/tag/v0.1.0)
+Xcode에서 **File → Add Package Dependencies**를 열고 `https://github.com/Rust-Inside/sample-ios-sdk.git`를 입력하세요. 버전 `0.2.0`을 선택하고 앱 타깃에 `SampleRustCoreSDK` 제품을 추가하면 Xcode가 미리 빌드된 XCFramework를 내려받습니다. [v0.2.0 릴리스](https://github.com/Rust-Inside/sample-ios-sdk/releases/tag/v0.2.0)
 
 ### 비공개 XCFramework 받기
 
 비공개 저장소에 자체 SDK를 배포했는데 Xcode가 XCFramework를 받지 못한다면, 그 저장소에 읽기 권한이 있는 계정으로 `gh auth login`을 실행하세요. 앱 저장소의 같은 셸에서 아래 명령을 차례로 실행하고, `repo`에는 자체 SDK 저장소를 지정합니다.
 
 ```sh
-version=0.1.0
+version=0.2.0
 repo=Rust-Inside/sample-ios-sdk
 package_dir="Vendor/SampleRustCoreSDK-$version"
 archive="SampleRustCoreSDKFFI-$version.xcframework.zip"
@@ -37,7 +37,7 @@ gh release download "v$version" --repo "$repo" --pattern "$archive" --dir "$pack
 )
 ```
 
-Xcode의 **Add Package Dependencies → Add Local**에서 `Vendor/SampleRustCoreSDK-0.1.0` 폴더를 선택하고 앱 타깃에 `SampleRustCoreSDK`를 추가하세요.
+Xcode의 **Add Package Dependencies → Add Local**에서 `Vendor/SampleRustCoreSDK-0.2.0` 폴더를 선택하고 앱 타깃에 `SampleRustCoreSDK`를 추가하세요.
 
 ## 프로필 조회
 
