@@ -1,6 +1,6 @@
 # Sample Rust Core · iOS SDK
 
-[English](README.md) | [한국어](README.ko.md)
+[English](README.md)
 
 Swift에서 `account.getMe()`를 호출하면 로그인한 사용자의 프로필을 받습니다. Rust Inside는 샘플 Rust 라이브러리로 iOS SDK를 빌드해 이 저장소에 Swift 패키지로 배포합니다. 패키지는 Swift tools 6.0을 사용하고, iOS 18 이상인 arm64 기기와 Apple Silicon 시뮬레이터를 지원합니다. [Rust 구현](https://github.com/Rust-Inside/sample-rust-core/blob/v0.2.0/src/api.rs)
 

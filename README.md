@@ -1,6 +1,6 @@
 # Sample Rust Core · iOS SDK
 
-[English](README.md) | [한국어](README.ko.md)
+[한국어](README.ko.md)
 
 Call `account.getMe()` from Swift to fetch the signed-in user's profile. Rust Inside builds the iOS SDK from the sample Rust library and publishes it here as a Swift package. The package uses Swift tools 6.0 and supports iOS 18 or later on arm64 devices and Apple Silicon simulators. [Rust implementation](https://github.com/Rust-Inside/sample-rust-core/blob/v0.2.0/src/api.rs)
 
